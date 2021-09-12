@@ -15,28 +15,29 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">
-            <img id='imgTrainerElement' alt="" class="ml-2"> 
-            Trainer
-        </h5>
+          <div class="card-header">
+            <div class="row">
+              <div class="col">
+                <img id='imgTrainerElement' height="30px" alt="" class="ml-2"> 
+                <strong>Trainer</strong>
+              </div>
+              <div class="col">
+                <select id='txtTrainerElement' class="form-select form-select-sm" title="Select trainer element">
+                  <option value="">--</option>
+                  <option value="FIRE">Fire</option>
+                  <option value="EARTH">Earth</option>
+                  <option value="AIR">Air</option>
+                  <option value="WATER">Water</option>
+                </select>
+              </div>
+            </div>
+          </div>
           <div class="card-body">
             <div class="row">
-              <div class="col-md-6">
-                <div class="mb-3">
-                  <label for="txtTrainerElement">Element</label>
-                  <select id='txtTrainerElement' class="form-select" title="Select trainer element">
-                    <option value="">--</option>
-                    <option value="FIRE">Fire</option>
-                    <option value="EARTH">Earth</option>
-                    <option value="AIR">Air</option>
-                    <option value="WATER">Water</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
+              <div class="col">
                 <div class="mb-3">
                  <label for="txtTrainerPower">Trainer power</label>
-                 <input type="text" class="form-control" id="txtTrainerPower" placeholder="0">
+                 <input type="text" class="form-control form-control-sm" id="txtTrainerPower" placeholder="0">
                </div>
                </div>
             </div>
@@ -45,33 +46,31 @@
       </div>
       <div class="col">
         <div class="card">
-          <h5 class="card-header">
-            <img id='imgBunicornElement' alt="" class="ml-2"> 
-            Bunicorn
-        </h5>
-          <div class="card-body">
+          <div class="card-header">
             <div class="row">
-              <div class="col-md-12">
-                <div class="mb-3">
-                  <label for="txtBunicornElement">
-                      Element
-                  </label>
-                  <select id='txtBunicornElement' class="form-select" title="Select bunicorn element">
-                    <option value="">--</option>
-                    <option value="FIRE">Fire</option>
-                    <option value="EARTH">Earth</option>
-                    <option value="AIR">Air</option>
-                    <option value="WATER">Water</option>
-                  </select>
-                </div>
+              <div class="col">
+                <img id='imgBunicornElement' height="30px" alt="" class="ml-2"> 
+                <strong>Bunicorn</strong>
+              </div>
+              <div class="col">
+                <select id='txtBunicornElement' class="form-select form-select-sm" title="Select bunicorn element">
+                  <option value="">--</option>
+                  <option value="FIRE">Fire</option>
+                  <option value="EARTH">Earth</option>
+                  <option value="AIR">Air</option>
+                  <option value="WATER">Water</option>
+                </select>
               </div>
             </div>
+
+          </div>
+          <div class="card-body">
             <!--LB-->
             <div class="row">
-              <div class="col-md-6 col-sm-6">
+              <div class="col">
                 <div class="mb-3">
                   <label for="txtAttribute1">Attribute 1</label>
-                  <select id='txtAttribute1' class="form-select">
+                  <select id='txtAttribute1' class="form-select form-select-sm">
                     <option value="">--</option>
                     <option value="FIRE">FIRE</option>
                     <option value="EARTH">EARTH</option>
@@ -81,25 +80,25 @@
                   </select>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-6">
+              <div class="col">
                 <div class="mb-3">
                   <label for="">Value</label>
-                  <input type="text" id='txtAttribute1Val' class="form-control" placeholder="0">
+                  <input type="text" id='txtAttribute1Val' class="form-control form-control-sm" placeholder="0">
                 </div>
               </div>
             </div>
             <p>
-              <a class="btn btn-primary btn-sm" data-bs-toggle="collapse" href="#collapseMoreAttrib" role="button" aria-expanded="false" aria-controls="collapseMoreAttrib">
+              <a class="btn btn-outline-info btn-sm" data-bs-toggle="collapse" href="#collapseMoreAttrib" role="button" aria-expanded="false" aria-controls="collapseMoreAttrib">
                 <i class="bi bi-plus-lg"></i>
                 More Attribute
               </a>
             </p>
             <div class="collapse" id="collapseMoreAttrib">
               <div class="row">
-                <div class="col-md-6 col-sm-6">
+                <div class="col">
                   <div class="mb-3">
-                    <label for="txtTrainerLevel">Attribute 2</label>
-                    <select id='txtAttribute2' class="form-select">
+                    <label for="txtAttribute2">Attribute 2</label>
+                    <select id='txtAttribute2' class="form-select form-select-sm">
                       <option value="">--</option>
                       <option value="FIRE">FIRE</option>
                       <option value="EARTH">EARTH</option>
@@ -109,19 +108,19 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
+                <div class="col">
                   <div class="mb-3">
-                    <label for="">Value</label>
-                    <input type="text" id='txtAttribute2Val' class="form-control" placeholder="0">
+                    <label for="txtAttribute2Val">Value</label>
+                    <input type="text" id='txtAttribute2Val' class="form-control form-control-sm" placeholder="0">
                   </div>
                 </div>
               </div>
               
               <div class="row">
-                <div class="col-md-6 col-sm-6">
+                <div class="col">
                   <div class="mb-3">
-                    <label for="txtTrainerLevel">Attribute 3</label>
-                    <select id='txtAttribute3' class="form-select">
+                    <label for="txtAttribute3">Attribute 3</label>
+                    <select id='txtAttribute3' class="form-select form-select-sm">
                       <option value="">--</option>
                       <option value="FIRE">FIRE</option>
                       <option value="EARTH">EARTH</option>
@@ -131,10 +130,10 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
+                <div class="col">
                   <div class="mb-3">
                     <label for="">Value</label>
-                    <input type="text" id='txtAttribute3Val' class="form-control" placeholder="0">
+                    <input type="text" id='txtAttribute3Val' class="form-control form-control-sm" placeholder="0">
                   </div>
                 </div>
               </div>
@@ -142,10 +141,10 @@
 
             <!--Bonus power-->
             <div class="row">
-              <div class="col-md-12">
+              <div class="col">
                 <div class="mb-3">
                   <label for="">Bonus power</label>
-                  <input type="text" id='txtBonusPower' class="form-control" placeholder="0">
+                  <input type="text" id='txtBonusPower' class="form-control form-control-sm" placeholder="0">
                 </div>
               </div>
             </div>
@@ -154,28 +153,30 @@
       </div>
       <div class="col">
         <div class="card">
-          <h5 class="card-header">
-            <img id='imgEnemyElement' alt="" class="ml-2"> 
-            Enemy
-          </h5>
+          <div class="card-header">
+            <div class="row">
+              <div class="col">
+                <img id='imgEnemyElement' height="30px"  alt="" class="ml-2"> 
+                <strong>Enemy</strong> 
+              </div>
+              <div class="col">
+                <select id='txtEnemyElement' class="form-select form-select-sm">
+                  <option value="">--</option>
+                  <option value="FIRE">Fire</option>
+                  <option value="EARTH">Earth</option>
+                  <option value="AIR">Air</option>
+                  <option value="WATER">Water</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
           <div class="card-body">
             <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="mb-3">
-                  <label for="txtEnemyElement">Element</label>
-                  <select id='txtEnemyElement' class="form-select">
-                    <option value="">--</option>
-                    <option value="FIRE">Fire</option>
-                    <option value="EARTH">Earth</option>
-                    <option value="AIR">Air</option>
-                    <option value="WATER">Water</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-6">
+              <div class="col">
                 <div class="mb-3">
                   <label for="">Enemy power</label>
-                  <input type="text" id='txtEnemyPower' class="form-control" placeholder="0">
+                  <input type="text" id='txtEnemyPower' class="form-control form-control-sm" placeholder="0">
                 </div>
               </div>
             </div>
