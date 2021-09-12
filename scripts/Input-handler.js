@@ -1,10 +1,10 @@
-$('#txtTrainerLevel').on('input', function(){
-    var inputData = $('#txtTrainerLevel').val();
-    if (isNaN(inputData)){
-        MsgBox('Only input the number to this field.', `You already inputed: ${inputData}`, 'error')
-        $('#txtTrainerLevel').val('');
-    }
-})
+// $('#txtTrainerLevel').on('input', function(){
+//     var inputData = $('#txtTrainerLevel').val();
+//     if (isNaN(inputData)){
+//         MsgBox('Only input the number to this field.', `You already inputed: ${inputData}`, 'error')
+//         $('#txtTrainerLevel').val('');
+//     }
+// })
 
 $('#txtTrainerPower').on('input', function(){
     var inputData = $('#txtTrainerPower').val();
@@ -139,7 +139,7 @@ function copyAddr(add){
         title: 'Address copied',
         text: 'Thanks for donate',
         timer: 3000,
-        position: 'top',
+        position: 'bottom',
         toast: true,
         showConfirmButton: false
     });
