@@ -3,7 +3,7 @@
 //
 
 
-function alignedPower(trainerElement, trainerLevel, trainerPower, attribute1, attribute2, attribute3, attribute1Val, attribute2Val, attribute3Val, bonusPower){
+function alignedPower(trainerElement, trainerPower, attribute1, attribute2, attribute3, attribute1Val, attribute2Val, attribute3Val, bonusPower){
     attribute1Val = parseInt(attribute1Val);
     attribute2Val = parseInt(attribute2Val);
     attribute3Val = parseInt(attribute3Val);
@@ -18,19 +18,19 @@ function alignedPower(trainerElement, trainerLevel, trainerPower, attribute1, at
     var attributeTotal = attribute1Val + attribute2Val + attribute3Val;
     trainerPower = parseInt(trainerPower);
     bonusPower = parseInt(bonusPower);
-    trainerLevel = parseInt(trainerLevel);
+    // trainerLevel = parseInt(trainerLevel);
     // var result = ((attributeTotal + 1) * trainerPower) + bonusPower + 15 * (trainerLevel - 1);
     var result = ((attributeTotal + 1) * trainerPower) + bonusPower;
     return result;
 }
 
-function unalignedPower(trainerPower, trainerLevel, attribute1Val=0, attribute2Val=0, attribute3Val=0, bonusPower=0){
+function unalignedPower(trainerPower, attribute1Val=0, attribute2Val=0, attribute3Val=0, bonusPower=0){
    attribute1Val = parseInt(attribute1Val);
    attribute2Val = parseInt(attribute2Val);
    attribute3Val = parseInt(attribute3Val);
    trainerPower = parseInt(trainerPower);
    bonusPower = parseInt(bonusPower);
-   trainerLevel = parseInt(trainerLevel);
+//    trainerLevel = parseInt(trainerLevel);
    var attributeTotal = attribute1Val + attribute2Val +  attribute3Val;
 //    var result = (((attributeTotal * 0.0025) + 1 ) * trainerPower) + bonusPower + 15 * (trainerLevel - 1);
    var result = (((attributeTotal * 0.0025) + 1 ) * trainerPower) + bonusPower;
@@ -92,8 +92,8 @@ function elementBonus(trainerElement, bunicornElement, enemyElement){
 
 
 
-function finalPowerValue(trainerElement, trainerLevel=1, trainerPower=0, bunicornElement, attribute1, attribute2, attribute3, attribute1Val=0, attribute2Val=0, attribute3Val=0, bonusPower=0, enemyElement){
-    var alignedPwr = alignedPower(trainerElement, trainerLevel, trainerPower, attribute1, attribute2, attribute3, attribute1Val, attribute2Val, attribute3Val, bonusPower);
+function finalPowerValue(trainerElement, trainerPower=0, bunicornElement, attribute1, attribute2, attribute3, attribute1Val=0, attribute2Val=0, attribute3Val=0, bonusPower=0, enemyElement){
+    var alignedPwr = alignedPower(trainerElement, trainerPower, attribute1, attribute2, attribute3, attribute1Val, attribute2Val, attribute3Val, bonusPower);
     var elementBns = elementBonus(trainerElement, bunicornElement, enemyElement);
     var final = alignedPwr * elementBns;
     // return [Math.floor(final * 0.9), Math.floor(final * 1.1)]
@@ -119,7 +119,7 @@ $(document).ready(function() {
 $('#btnCalc').on('click', function(){
     //Trainer
     var trainerElement = $('#txtTrainerElement').val();
-    var trainerLevel = $('#txtTrainerLevel').val();
+    // var trainerLevel = $('#txtTrainerLevel').val();
     var trainerPower = $('#txtTrainerPower').val();
     //Bunicorn
     var  bunicornElement =  $('#txtBunicornElement').val();
@@ -136,12 +136,12 @@ $('#btnCalc').on('click', function(){
         MsgBox("Please select your trainer element", '', 'error');
         return;
     }
-    if(trainerLevel == ''){
-        trainerLevel = 0;
-    }
-    if(trainerPower == ''){
-        trainerPower = 0;
-    }
+    // if(trainerLevel == ''){
+    //     trainerLevel = 0;
+    // }
+    // if(trainerPower == ''){
+    //     trainerPower = 0;
+    // }
     if (bunicornElement == ''){
         MsgBox("Please select your bunicorn element", '', 'error');
         return;
@@ -184,13 +184,13 @@ $('#btnCalc').on('click', function(){
     var maxEnemyPwr = parseInt(enemyPwr) * 1.1;
     var winRate = 0.0;
     if(trainerElement == bunicornElement){
-        var pwr = finalPowerValue(trainerElement, trainerLevel, trainerPower, bunicornElement,  attribute1, attribute2, attribute3, attribute1Val, attribute2Val, attribute3Val, bonusPower, enemyElement);
+        var pwr = finalPowerValue(trainerElement, trainerPower, bunicornElement,  attribute1, attribute2, attribute3, attribute1Val, attribute2Val, attribute3Val, bonusPower, enemyElement);
         var str = `<i class="bi bi-lightning-charge"></i> Your power:     ${Math.floor(pwr[0])} ~ ${Math.floor(pwr[1])}`;
         $('#lbResult').html(str);
         winRate = winRateCalc(Math.floor(pwr[0]), Math.floor(pwr[1]), Math.floor(minEnemyPwr), Math.floor(maxEnemyPwr));
     }
     else{
-        var b = unalignedPower(trainerPower, trainerLevel, attribute1Val, attribute2Val, attribute3Val, bonusPower);
+        var b = unalignedPower(trainerPower, attribute1Val, attribute2Val, attribute3Val, bonusPower);
         var myMinPwr = Math.floor(b * 0.9);
         var myMaxPwr = Math.floor(b * 1.1);
         var str = `<i class="bi bi-lightning-charge"></i> Your power:     ${myMinPwr} ~ ${myMaxPwr}`;
@@ -255,7 +255,7 @@ function Toast(text, icon='info'){
         icon: icon,
         text: text,
         timer: 3000,
-        position: 'top',
+        position: 'center',
         toast: true,
         showConfirmButton: false,
         timerProgressBar: true,
